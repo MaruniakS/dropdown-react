@@ -4,6 +4,16 @@ $grey: #9e9e9e;
   position: relative;
   width: 400px;
 
+  .itemsContainer {
+    display: none;
+  }
+
+  &.dropdown-is-opened {
+    .itemsContainer {
+      display: block;
+    }
+  }
+
   &:hover {
     cursor: pointer;
   }

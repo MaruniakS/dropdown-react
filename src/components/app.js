@@ -1,12 +1,14 @@
 import React from 'react';
 import DropDown from './DropDown';
+import withOutsideClicker from './OutsideClicker';
 
 class App extends React.Component {
 	render () {
+			const DropDownMenu = withOutsideClicker(DropDown);
 		return (<div className='appContainer'>
 				<div className='content'>
-						hello world
-						<DropDown/>
+						<DropDownMenu/>
+						<DropDownMenu/>
 				</div>
 		</div>);
 	}
