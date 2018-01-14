@@ -1,4 +1,4 @@
-$grey: #F2F2F2;
+@import "colors";
 
 .dropdown {
   position: relative;
@@ -33,9 +33,9 @@ $grey: #F2F2F2;
       height: 0;
       border-style: solid;
       border-width: 5px 5px 0 5px;
-      border-color: $grey transparent transparent;
+      border-color: $caret transparent transparent;
       right: 15px;
-      top: 18px;
+      top: 24px;
       position: absolute;
       transform: rotate(0deg);
       transition: all .25s ease-in;

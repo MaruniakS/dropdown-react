@@ -9,6 +9,7 @@ class DropDown extends React.Component {
 			};
 
 			this.toggleOpened = this.toggleOpened.bind(this);
+			this.selectItem = this.selectItem.bind(this);
 	}
 
 	componentWillReceiveProps (props) {
@@ -21,12 +22,12 @@ class DropDown extends React.Component {
 
 	render () {
 			const items = this.props.items.map((item) => {
-					return <DropDownItem key={item.id} title={item.name} />
+					return <DropDownItem key={item.id} item={item} selectItem={this.selectItem} />
 			});
 			const isOpened = this.state.isOpened;
 			return (<div className={'dropdown ' + (isOpened ? 'dropdown-is-opened' : '')}>
 					<div className='selector' onClick={this.toggleOpened}>
-							Select country <span className='caret'/>
+							{this.state.selected || 'Select country'} <span className='caret'/>
 					</div>
 					<div className='itemsContainer'>
 							{items}
@@ -37,6 +38,13 @@ class DropDown extends React.Component {
 	toggleOpened () {
 			this.setState ({
 					isOpened: !this.state.isOpened
+			});
+	}
+
+	selectItem (item) {
+			this.setState ({
+					selected: item.name,
+					isOpened: false
 			});
 	}
 }
