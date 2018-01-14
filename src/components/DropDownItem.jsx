@@ -7,8 +7,8 @@ class DropDownItem extends React.Component {
 		}
 
 		render () {
-				return (<div className='dropdown'>
-						DropDown item
+				return (<div className='dropdown--item'>
+						{this.props.title}
 				</div>);
 		}
 }

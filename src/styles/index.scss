@@ -1,12 +1,16 @@
 // GENERAL STYLES
 
-body {
-  background: white;
-  color: red;
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
-  h1 {
-    background: yellow;
-  }
+.appContainer {
+  position: relative;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // IMPORTS
