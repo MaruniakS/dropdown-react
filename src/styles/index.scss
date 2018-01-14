@@ -1,3 +1,5 @@
+// GENERAL STYLES
+
 body {
   background: white;
   color: red;
@@ -6,3 +8,8 @@ body {
     background: yellow;
   }
 }
+
+// IMPORTS
+
+@import "dropdown";
+@import "dropdown-item";

@@ -1,9 +1,11 @@
 import React from 'react';
+import DropDown from './DropDown';
 
 class App extends React.Component {
 	render () {
 		return (<div className='appContainer'>
-            Hello World!
+				hello world
+            <DropDown/>
 		</div>);
 	}
 }
