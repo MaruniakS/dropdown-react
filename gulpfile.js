@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 var path = {
 		watch: {
-				js: 'src/**/*.js',//{js,jsx}
+				js: 'src/**/*.{js,jsx}',
 				styles: 'src/**/*.scss'
 		},
 		src: {
@@ -43,6 +43,8 @@ gulp.task("webpack", function(callback) {
 				if(err) throw new gutil.PluginError("webpack", err);
 				gutil.log("[webpack]", stats.toString({}));
 				callback();
+				return gulp.src(path.watch.js)
+						.pipe(connect.reload());
 		});
 });
 
@@ -52,15 +54,15 @@ gulp.task('connect', function() {
 		});
 });
 
-gulp.task('html', function () {
-		gulp.src('./index.html')
-				.pipe(gulp.dest('./'))
-				.pipe(connect.reload());
-});
+// gulp.task('html', function () {
+// 		gulp.src('./index.html')
+// 				.pipe(gulp.dest('./'))
+// 				.pipe(connect.reload());
+// });
 
 gulp.task('watch', function () {
 		gulp.watch(path.watch.js, ['webpack']);
-		gulp.watch(['index.html'], ['html']);
+		// gulp.watch(['index.html'], ['html']);
 		gulp.watch(path.watch.styles, ['styles']);
 });
 
