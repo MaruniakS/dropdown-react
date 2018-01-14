@@ -6,7 +6,7 @@ module.exports = {
 		'./entry.js',
 	],
 	output: {
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, 'build'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -17,14 +17,14 @@ module.exports = {
 				loader: 'babel-loader',
 				include: path.join(__dirname, 'src'),
 				query: {
-					presets: [ 'es2015', 'react', 'react-hmre' ]
+					presets: [ 'es2015', 'react']//, 'react-hmre' ]
 				}
 			},
-			{
-				test:/\.(s*)css$/,
-				loader: 'style-loader!css-loader',
-				include: path.join(__dirname, 'src'),
-			}
+		// 	{
+		// 		test:/\.(s*)css$/,
+		// 		loader: 'style-loader!css-loader',
+		// 		include: path.join(__dirname, 'src'),
+		// 	}
 		]
 	},
 	resolve: {
