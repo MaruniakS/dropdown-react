@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import App from './components/container';
+import { Provider } from 'react-redux';
+import store from './store';
 
 document.addEventListener('DOMContentLoaded', function() {
 	ReactDOM.render(
-		React.createElement(App),
-		document.getElementById('appRoot')
+			<Provider store={store}>
+					<App />
+			</Provider>,
+		 document.getElementById('appRoot')
 	);
 });
