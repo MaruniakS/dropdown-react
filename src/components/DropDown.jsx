@@ -21,6 +21,7 @@ class DropDown extends React.Component {
 	}
 
 	render () {
+			console.log(this.props);
 			const items = this.props.items.map((item) => {
 					return <DropDownItem key={item.id} item={item} selectItem={this.selectItem} />
 			});

@@ -1,4 +1,4 @@
-const countries = (state = [], action) => {
+const dropDowns = (state = [], action) => {
 		switch (action.type) {
 				case 'SELECT_COUNTRY':
 						return [
@@ -14,4 +14,4 @@ const countries = (state = [], action) => {
 		}
 };
 
-export default countries;
+export default dropDowns;

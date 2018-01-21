@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import countries from './countries';
+import dropDowns from './drop_downs';
 
 const dropDownApp = combineReducers({
-		countries
+		dropDowns
 });
 
 export default dropDownApp;
