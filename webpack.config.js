@@ -12,12 +12,12 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.js|jsx$/,
+				test: /\.js|jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 				include: path.join(__dirname, 'src'),
 				query: {
-					presets: [ 'es2015', 'react']//, 'react-hmre' ]
+					presets: [ 'es2015', 'react', 'stage-2' ]//, 'react-hmre' ]
 				}
 			},
 		// 	{

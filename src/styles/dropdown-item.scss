@@ -10,3 +10,8 @@
     background-color: $grey;
   }
 }
+
+.dropdown--item-is-selected {
+  @extend .dropdown--item;
+  background-color: $grey;
+}

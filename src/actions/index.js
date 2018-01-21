@@ -1,6 +1,7 @@
-export const changeSelected = id => {
+export const selectCountry = (index, id) => {
 	return {
-			type: 'SELECT_ITEM',
-			selectedCountryId: id
+			type: 'SELECT_COUNTRY',
+			index,
+			id
 	}
 };

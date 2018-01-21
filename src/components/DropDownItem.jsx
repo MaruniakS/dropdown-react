@@ -8,13 +8,13 @@ class DropDownItem extends React.Component {
 		}
 
 		render () {
-				return (<div className='dropdown--item' onClick={this.handleSelection}>
-						{this.props.item.name}
+				return (<div className={this.props.isSelected ? 'dropdown--item-is-selected' : 'dropdown--item'} onClick={this.handleSelection}>
+						{this.props.text}
 				</div>);
 		}
 
 		handleSelection () {
-				this.props.selectItem(this.props.item);
+				this.props.selectItem(this.props.value);
 		}
 }
 

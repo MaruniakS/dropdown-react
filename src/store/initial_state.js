@@ -1,7 +1,7 @@
 export const INITIAL_STATE = {
 		dropDowns: [
 				{
-						selectedCountryId: '2',
+						selectedCountryId: null,
 						countries: [
 								{
 										id: '1',
@@ -25,7 +25,7 @@ export const INITIAL_STATE = {
 								}]
 				},
 				{
-						selectedCountryId: '2',
+						selectedCountryId: null,
 						countries: [
 								{
 										id: '1',

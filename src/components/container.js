@@ -11,7 +11,7 @@ class App extends React.Component {
 			const actions = bindActionCreators(dropDownActions, dispatch);
 			const DropDownMenu = withOutsideClicker(DropDown);
 			const lists = dropDowns.map((item, index) => {
-					return <DropDownMenu actions={actions} index={index} {...item} key={index}/>
+					return <DropDownMenu onSelectValueChanged={actions.selectCountry} index={index} {...item} key={index}/>
 			});
 			return (<div className='appContainer'>
 					<div className='content'>

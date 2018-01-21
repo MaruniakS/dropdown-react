@@ -5,7 +5,8 @@ class DropDown extends React.Component {
 	constructor (props) {
 			super(props);
 			this.state = {
-					isOpened: this.props.outside
+					isOpened: props.outside,
+					title: props.title
 			};
 
 			this.toggleOpened = this.toggleOpened.bind(this);
@@ -20,15 +21,24 @@ class DropDown extends React.Component {
 			}
 	}
 
+	componentDidMount () {
+			const title = this.props.selectedCountryId
+					? this.props.countries.filter(item => item.id === this.props.selectedCountryId)[0].name
+					: this.state.title;
+			this.setState({
+					title
+			});
+	}
+
 	render () {
-			console.log(this.props);
-			const items = this.props.items.map((item) => {
-					return <DropDownItem key={item.id} item={item} selectItem={this.selectItem} />
+			const items = this.props.countries.map((item) => {
+					return <DropDownItem key={item.id} text={item.name} value={item.id}
+															 isSelected={item.id === this.props.selectedCountryId} selectItem={this.selectItem} />
 			});
 			const isOpened = this.state.isOpened;
 			return (<div className={'dropdown ' + (isOpened ? 'dropdown-is-opened' : '')}>
 					<div className='selector' onClick={this.toggleOpened}>
-							{this.state.selected || 'Select country'} <span className='caret'/>
+							{this.state.title} <span className='caret'/>
 					</div>
 					<div className='itemsContainer'>
 							{items}
@@ -42,37 +52,16 @@ class DropDown extends React.Component {
 			});
 	}
 
-	selectItem (item) {
+	selectItem (id) {
+			this.props.onSelectValueChanged(this.props.index, id);
 			this.setState ({
-					selected: item.name,
 					isOpened: false
 			});
 	}
 }
 
 DropDown.defaultProps = {
-	items: [
-			{
-					id: '1',
-					name: 'Ukraine'
-			},
-			{
-					id: '2',
-					name: 'USA'
-			},
-			{
-					id: '3',
-					name: 'England'
-			},
-			{
-					id: '4',
-					name: 'Spain'
-			},
-			{
-					id: '5',
-					name: 'Poland'
-			}
-	]
+		title: 'Select country'
 };
 
 export default DropDown;
